@@ -9,16 +9,34 @@ package Dominio;
  * @author ingri
  */
 public class Persona {
+        private int id;
         private String nombre;
         private String apellido;
+        
+    //nuestro contador de persona
+        private static int contadorPersona;
 
     public Persona() {
+        this.id= ++Persona.contadorPersona;
     }
 
-    public Persona(String nombre, String apellido) {
+    public final void imprimir(){
+        System.out.println("imprimiendo desde la clase padre");
+    }
+    
+    public Persona( String nombre, String apellido) {
+        this();
         this.nombre = nombre;
         this.apellido = apellido;
     }
+
+    public int getId() {
+        return id;
+    }
+
+//        public void setId(int id) {
+//            this.id = id;
+//        }
 
     public String getNombre() {
         return nombre;
@@ -37,17 +55,26 @@ public class Persona {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Persona{");
-        sb.append("nombre=").append(nombre);
+        sb.append("id=").append(id);
+        sb.append(", nombre=").append(nombre);
         sb.append(", apellido=").append(apellido);
         sb.append('}');
         return sb.toString();
     }
-        
-        
-        
+    
+    
+       
+       
+      
     
     
 }
