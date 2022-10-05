@@ -48,24 +48,47 @@ static Persona arrayPersonas[]=new Persona[10];
         }
         // EDADES 
         int edades[][]= new int[3][4];
-        
-            for (int[] edade : edades) {
-                for (int j = 0; j < edades.length; j++) {
-                    edade[j] = alea(0,9);
-                }
+        Integer edad[]= new Integer[3];
+        edad[0]= 1;
+        edad[1]= 5;
+        edad[2]= 4;
+        for (int i = 0; i < edades.length; i++) {
+            for (int j = 0; j < edades[i].length; j++) {
+                edades[i][j]=alea(0,9);
+                System.out.println("\t "+edades[i][j]);
             }
-                    System.out.println("VISUALIZAR EDADES");
-            for (int[] edade : edades) {
-                //visualizar
-                for (int j = 0; j < edades[0].length; j++) {
-                    System.out.print("\t" + edades[j]);
-                }
-                System.out.println("");
-            }
+            System.out.println("");
         }
         
-        public static int alea(int li, int ls){//función de JAVA
-                return (int)((Math.round(Math.random()*(ls-li))+li));
-            }
+            imprimir(edad);
+            imprimir(personas);
+            System.out.println("primera llamada");
+            imprimirNum(1,2,3);
+            System.out.println("segunda llamada");
+            imprimirNum(8,4,3);
+        }
+        
+    public static int alea(int li, int ls){//función de JAVA
+            return (int)((Math.round(Math.random()*(ls-li))+li));
+    }
     
+    public static void imprimir (Object lista[]){
+        for (int i = 0; i < lista.length; i++) {
+            System.out.println("lista"+i +"}- "+lista[i]);
+        }
+    
+    }
+    //como se podria crear un metodo que de forma dinamica imprima 2 o 3 numeros 
+    //imprimiendo numeros con metodos de argumentos variables 
+     public static void imprimirNum(int...edad){// puedes poner cualquier nombre 
+         for (int i = 0; i < edad.length; i++) {
+             System.out.println("numeros [ "+ i +"]=" +edad[i]);
+         }
+         
+         
+     }
+
+
+
+
 }
