@@ -1,5 +1,6 @@
 
 package principal;
+import Dominio.Empleado;
 import Dominio.Persona;
 import java.util.Arrays;
 /**Príncipe Pío, 28008 Madrid
@@ -14,10 +15,17 @@ static Persona arrayPersonas[]=new Persona[10];
     public static void main(String[] args) {
         System.out.println("Gestión empleados");
         //CREAMOS LOS OBJETOS
+        /*
+        @Override
+    public String toString() {
+        return "Empleado{" + super.toString()+"sueldo=" + sueldo + ", numSS=" + numSS + '}';
+    }
+        */
         Persona pers1 = new Persona("Ingrid","Ruiz");
         Persona pers2 = new Persona("Emily","Ruiz");
         Persona pers3 = new Persona("Ana","Ruiz");
         Persona pers4 = new Persona("Ingrid","Gomez");
+        
         //LOS METEMOS EN UN ARRAY
         Persona personas[]= new Persona [4];
         personas[0]= pers1;
@@ -66,6 +74,8 @@ static Persona arrayPersonas[]=new Persona[10];
             imprimirNum(1,2,3);
             System.out.println("segunda llamada");
             imprimirNum(8,4,3);
+            //HERENCIAS
+            
         }
         
     public static int alea(int li, int ls){//función de JAVA
