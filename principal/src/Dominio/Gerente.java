@@ -1,6 +1,6 @@
 
 package Dominio;
-//import Dominio.Empleado;
+import Dominio.Empleado;
 
 /**
  *

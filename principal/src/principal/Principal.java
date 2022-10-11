@@ -1,9 +1,8 @@
 
 package principal;
-import Dominio.Empleado;
-import Dominio.Persona;
+import Dominio.*;
 import java.util.Arrays;
-/**Príncipe Pío, 28008 Madrid
+/**
  *
  * @author ingri
  */
@@ -14,7 +13,8 @@ static Persona arrayPersonas[]=new Persona[10];
      */
     public static void main(String[] args) {
         System.out.println("Gestión empleados");
-        //CREAMOS LOS OBJETOS
+        
+    
         /*
         @Override
     public String toString() {
@@ -60,14 +60,20 @@ static Persona arrayPersonas[]=new Persona[10];
         edad[0]= 1;
         edad[1]= 5;
         edad[2]= 4;
-        for (int i = 0; i < edades.length; i++) {
+//    for (int[] edade : edades) {
+//        for (int j = 0; j < edade.length; j++) {
+//            edade[j] = alea(0,9);
+//            System.out.println("\t " + edade[j]);
+//        }
+//        System.out.println("");
+//    }
+         for (int i = 0; i < edades.length; i++) {
             for (int j = 0; j < edades[i].length; j++) {
                 edades[i][j]=alea(0,9);
                 System.out.println("\t "+edades[i][j]);
             }
             System.out.println("");
         }
-        
             imprimir(edad);
             imprimir(personas);
             System.out.println("primera llamada");
@@ -75,7 +81,12 @@ static Persona arrayPersonas[]=new Persona[10];
             System.out.println("segunda llamada");
             imprimirNum(8,4,3);
             //HERENCIAS
+            Persona person = new Persona ("Luis","Dies");
+            Empleado emple = new Empleado (632.52,523,"ana","perez");
+            Gerente gere = new Gerente ("luisa","perez",652.52,5723,"luisa","perez");
             
+            visualizar(gere);
+
         }
         
     public static int alea(int li, int ls){//función de JAVA
@@ -90,7 +101,7 @@ static Persona arrayPersonas[]=new Persona[10];
     }
     //como se podria crear un metodo que de forma dinamica imprima 2 o 3 numeros 
     //imprimiendo numeros con metodos de argumentos variables 
-     public static void imprimirNum(int...edad){// puedes poner cualquier nombre 
+    public static void imprimirNum(int...edad){// puedes poner cualquier nombre 
          for (int i = 0; i < edad.length; i++) {
              System.out.println("numeros [ "+ i +"]=" +edad[i]);
          }
@@ -98,7 +109,18 @@ static Persona arrayPersonas[]=new Persona[10];
          
      }
 
-
-
+    //CREAMOS LOS OBJETOS: utilizando instance of , crear un metodo VISUALIZAR
+    public static void visualizar(Persona persona){
+        if(persona instanceof Persona){
+            System.out.println("Es una instancia de persona");
+        }if(persona instanceof Empleado){
+            System.out.println("Es una instancia de Empleado");
+        }if(persona instanceof Gerente){
+            System.out.println("Es una instancia de Gerente");
+            System.out.println("El departamento al que pertenece es: "+((Gerente) persona).getDepartamento());
+        }
+        
+      
+    }
 
 }
