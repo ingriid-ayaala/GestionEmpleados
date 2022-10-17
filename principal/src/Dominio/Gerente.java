@@ -1,4 +1,3 @@
-
 package Dominio;
 import Dominio.Empleado;
 
